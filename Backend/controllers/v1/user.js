@@ -14,3 +14,12 @@ exports.banUser = async (req, res) => {
   }
   return res.status(500).json({ message: "server Error!!" });
 };
+
+exports.getAll = async (req, res) => {
+  try {
+    const users = await userModel.find({},'-password');
+    return res.json(users);
+  } catch (err) {
+    return res.json(err);
+  }
+};
