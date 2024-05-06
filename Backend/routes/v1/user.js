@@ -5,6 +5,8 @@ const isAdminMid = require('../../middlewares/isAdmin')
 const router = express.Router();
 
 router.route('/').get(authMid,isAdminMid,usersController.getAll)
+router.route('/role').put(authMid,isAdminMid,usersController.changeUserRole)
+router.route('/:id').delete(authMid,isAdminMid,usersController.removeUser)
 router.route('/ban/:id').post(authMid ,isAdminMid ,usersController.banUser);
 
 
