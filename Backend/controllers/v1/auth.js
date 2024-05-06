@@ -52,7 +52,28 @@ exports.register = async (req, res) => {
 };
 
 // login user controller
-exports.login = async () => {};
+exports.login = async (req, res) => {
+  const { identifire, password } = req.body;
+
+  const user = await userModel.findOne({
+    $or: [{ email: identifire }, { username: identifire }],
+  });
+
+  if (!user) {
+    return res
+      .status(401)
+      .json({ message: "there is not user with this email or username!" });
+  }
+
+  const isValidPassword = await bcrypt.compare(password, user.password);
+  if (!isValidPassword) {
+    return res.status(401).json({ message: "password is not valid!" });
+  }
+  const accessToken = jwt.sign({ id: user._id }, process.env.JWT_KEY, {
+    expiresIn: "30 day",
+  });
+  return res.status(200).json({ accessToken });
+};
 
 // get user info controller
 exports.getMe = async () => {};
