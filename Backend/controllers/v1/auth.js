@@ -12,7 +12,7 @@ exports.register = async (req, res) => {
     return res.status(422).json(validationResult);
   }
   // get user info from request body
-  const { name, username, email, password, phone,address,profile } = req.body;
+  const { name, username, email, password, phone, address, profile } = req.body;
   // check user exsist or not
   const isUserExist = await userModel.findOne({
     $or: [{ username }, { email }, { phone }],
@@ -78,4 +78,16 @@ exports.login = async (req, res) => {
 };
 
 // get user info controller
-exports.getMe = async () => {};
+exports.getMe = async (req, res) => {
+  try {
+    const user = await userModel
+      .findById({ _id: req.user._id })
+      .select("-password");
+    if (!user) {
+      return res.status(404).json({ message: "user not found!" });
+    }
+    return res.json({ user });
+  } catch (err) {
+    return res.json(err);
+  }
+};
