@@ -12,7 +12,7 @@ exports.register = async (req, res) => {
     return res.status(422).json(validationResult);
   }
   // get user info from request body
-  const { name, username, email, password, phone } = req.body;
+  const { name, username, email, password, phone,address,profile } = req.body;
   // check user exsist or not
   const isUserExist = await userModel.findOne({
     $or: [{ username }, { email }, { phone }],
@@ -37,6 +37,8 @@ exports.register = async (req, res) => {
     username,
     email,
     phone,
+    address,
+    profile,
     password: hashPassword,
     role: countOfUsers > 0 ? "USER" : "ADMIN",
   });

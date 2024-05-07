@@ -21,6 +21,7 @@ const schema = new mongoose.Schema(
     },
     address: {
       type: String,
+      default:null
     },
     email: {
       type: String,
@@ -34,6 +35,7 @@ const schema = new mongoose.Schema(
     },
     profile: {
       type: String,
+      default:null
     },
   },
   { timestamps: true }

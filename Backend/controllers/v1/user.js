@@ -1,5 +1,6 @@
 const userModel = require("../../models/user");
 const banUserModel = require("../../models/banUser");
+const bcrypt = require("bcrypt");
 const { isValidObjectId } = require("mongoose");
 
 exports.banUser = async (req, res) => {
@@ -60,6 +61,37 @@ exports.changeUserRole = async (req, res) => {
     } else {
       return res.status(403).json("id is not valid!!");
     }
+  } catch (err) {
+    return res.json(err);
+  }
+};
+
+exports.updateUser = async (req, res) => {
+  try {
+    const { name, username, password, email, phone, address, profile } = req.body;
+
+    const hashPassword = await bcrypt.hash(password, 10);
+    const user = await userModel
+      .findByIdAndUpdate(
+        { _id: req.user._id },
+        {
+          name,
+          username,
+          email,
+          address,
+          profile,
+          password: hashPassword,
+          phone,
+        }
+      )
+      .select("-password")
+      .lean();
+    if (!user) {
+      return res.status(403).json({
+        message: "user update error!!",
+      });
+    }
+    return res.json({ user });
   } catch (err) {
     return res.json(err);
   }
