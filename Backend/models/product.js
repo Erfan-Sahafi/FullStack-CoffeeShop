@@ -1,6 +1,7 @@
 const { default: mongoose } = require("mongoose");
+require('./comment')
 
-const productSchema = new mongoose.Schema(
+const schema = new mongoose.Schema(
   {
     title: {
       type: String,
@@ -35,3 +36,7 @@ const productSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+const model = mongoose.model("Product",schema)
+
+module.exports = model
