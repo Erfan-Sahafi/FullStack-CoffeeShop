@@ -4,27 +4,32 @@ const productSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      require: true,
+      required: true,
     },
     desc: {
       type: String,
-      require: true,
+      required: true,
     },
     price: {
       type: Number,
-      require: true,
+      required: true,
     },
-    score: {                 
+    score: {
       type: Number,
-      require:true,
+      required: true,
     },
     coverImage: {
       type: String,
-      require: true,
+      required: true,
     },
-    // comment:{
-        
-    // }
+    comment: {
+      type: [
+        {
+          type: mongoose.Types.ObjectId,
+          ref: "Comment",
+        },
+      ],
+    },
   },
   {
     timestamps: true,
