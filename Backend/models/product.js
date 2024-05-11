@@ -1,5 +1,5 @@
 const { default: mongoose } = require("mongoose");
-require('./comment')
+require("./comment");
 
 const schema = new mongoose.Schema(
   {
@@ -15,11 +15,18 @@ const schema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    score: {
-      type: Number,
+    href: {
+      type: String,
       required: true,
     },
-    coverImage: {
+    category: {
+      type: String,
+      required: true,
+    },
+    score: {
+      type: Number,
+    },
+    cover: {
       type: String,
       required: true,
     },
@@ -37,6 +44,6 @@ const schema = new mongoose.Schema(
   }
 );
 
-const model = mongoose.model("Product",schema)
+const model = mongoose.model("Product", schema);
 
-module.exports = model
+module.exports = model;
