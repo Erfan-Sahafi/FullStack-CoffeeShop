@@ -68,7 +68,8 @@ exports.changeUserRole = async (req, res) => {
 
 exports.updateUser = async (req, res) => {
   try {
-    const { name, username, password, email, phone, address, profile } = req.body;
+    const { name, username, password, email, phone, address, profile } =
+      req.body;
 
     const hashPassword = await bcrypt.hash(password, 10);
     const user = await userModel
@@ -82,7 +83,8 @@ exports.updateUser = async (req, res) => {
           profile,
           password: hashPassword,
           phone,
-        }
+        },
+        { new: true,runValidators:true }
       )
       .select("-password")
       .lean();

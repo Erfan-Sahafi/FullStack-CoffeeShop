@@ -17,10 +17,17 @@ router
     isAdminMid,
     productController.createProduct
   );
-router.route('/:href').get(productController.getOne)  
+router.route("/:href").get(productController.getOne);
 router
   .route("/:id")
-  .delete(authMid, isAdminMid, productController.createProduct)
-  .patch(authMid, isAdminMid, productController.createProduct);
+  .delete(authMid, isAdminMid, productController.removeProduct)
+  .put(
+    multer({ storage: multerStorage, limits: { fileSize: 100000000 } }).single(
+      "cover"
+    ),
+    authMid,
+    isAdminMid,
+    productController.updateProduct
+  );
 
 module.exports = router;
