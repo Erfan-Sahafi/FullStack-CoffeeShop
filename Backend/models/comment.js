@@ -22,15 +22,7 @@ const schema = new mongoose.Schema(
     isAccept: {
       type: Number, // 0-1
       default: 0,
-    },
-    isAnswer: {
-      type: Number,
-      default: 0,
-    },
-    mainCommentID: {
-      type: mongoose.Types.ObjectId,
-      ref: "Comment",
-    },
+    }
   },
   { timestamps: true }
 );
