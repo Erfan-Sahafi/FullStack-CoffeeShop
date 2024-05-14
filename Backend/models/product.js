@@ -30,19 +30,25 @@ const schema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    comment: {
-      type: [
-        {
-          type: mongoose.Types.ObjectId,
-          ref: "Comment",
-        },
-      ],
-    },
+    // comment: {
+    //   type: [
+    //     {
+    //       type: mongoose.Types.ObjectId,
+    //       ref: "Comment",
+    //     },
+    //   ],
+    // },
   },
   {
     timestamps: true,
   }
 );
+
+schema.virtual('comments',{
+  ref:"Comment",
+  localField:"_id",
+  foreignField:"product"
+})
 
 const model = mongoose.model("Product", schema);
 

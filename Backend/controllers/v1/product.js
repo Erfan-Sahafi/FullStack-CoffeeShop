@@ -43,6 +43,7 @@ exports.getAll = async (req, res) => {
 };
 
 exports.getOne = async (req, res) => {
+  //code...
   try {
     const { href } = req.params;
     const product = await productModel.findOne({ href });
