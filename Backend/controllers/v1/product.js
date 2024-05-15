@@ -1,5 +1,6 @@
 const { default: mongoose, isValidObjectId } = require("mongoose");
 const productModel = require("../../models/product");
+const commentModel = require("../../models/comment");
 
 exports.createProduct = async (req, res) => {
   try {
@@ -28,7 +29,7 @@ exports.createProduct = async (req, res) => {
 
 exports.getAll = async (req, res) => {
   try {
-    const products = await productModel.find({}).populate("comment").lean();
+    const products = await productModel.find({}).lean();
     if (!products) {
       return res.status(403).json({
         message: "product get error!",
@@ -43,14 +44,17 @@ exports.getAll = async (req, res) => {
 };
 
 exports.getOne = async (req, res) => {
-  //code...
   try {
     const { href } = req.params;
-    const product = await productModel.findOne({ href });
+
+    const product = await productModel.findOne({ href }).lean();
+    const comment = await commentModel
+      .find({ product: product._id, isAccept: 1 })
+      .populate("creator", "-password").lean();
     if (!product) {
       return res.status(404).json({ message: "product not found!" });
     }
-    return res.json({ product });
+    return res.json({ product,comment });
   } catch (err) {
     return res.json(err);
   }
