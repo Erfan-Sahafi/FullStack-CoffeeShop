@@ -30,14 +30,6 @@ const schema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    // comment: {
-    //   type: [
-    //     {
-    //       type: mongoose.Types.ObjectId,
-    //       ref: "Comment",
-    //     },
-    //   ],
-    // },
   },
   {
     timestamps: true,

@@ -16,7 +16,7 @@ exports.createProduct = async (req, res) => {
     });
 
     if (!product) {
-      return res.status(403).json("product create error!!");
+      return res.status(403).json({message:'product create error!'});
     }
     return res.status(201).json({
       message: "product create successfuly:)",
