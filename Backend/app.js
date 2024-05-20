@@ -19,11 +19,5 @@ app.use("/v1/users", userRouter);
 app.use("/v1/products", productRouter);
 app.use("/v1/comments", commentRouter);
 
-app.use((err, req, res, next) => {
-  return res.json({
-    statusCode: err.status || 500,
-    msg: err.message || "server Error!",
-  });
-});
 
 module.exports = app;

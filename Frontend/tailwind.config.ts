@@ -7,14 +7,35 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+    container: {
+      center:true,
+      padding: {
+        DEFAULT: "1rem",
+        sm: "2rem",
+        lg: "4rem",
+        xl: "5rem",
+        "2xl": "6rem",
       },
     },
+    extend: {
+      backgroundImage: {
+        header: "url('/images/coffee_image.png')",
+      },
+      fontFamily: {
+        clickerScript: ["var(--font-script)"],
+        playfairDisplay: ["var(--font-playfair)"],
+      },
+      colors:{
+        main:'#F9C06A'
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }:any) {
+      addVariant("child", "& > *");
+      addVariant("child-hover", "& > *:hover");
+    },
+    require('flowbite/plugin')
+  ],
 };
 export default config;

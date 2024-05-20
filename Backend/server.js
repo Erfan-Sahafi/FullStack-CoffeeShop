@@ -9,8 +9,8 @@ const DB = process.env.MONGO_URL.replace(
 try {
   // Connect to the MongoDB cluster
   mongoose
-    .connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log(" Mongoose is connected"));
+    .connect(DB)
+    .then(() => console.log("Mongoose is connected"));
 } catch (e) {
   console.log("could not connect");
 }
