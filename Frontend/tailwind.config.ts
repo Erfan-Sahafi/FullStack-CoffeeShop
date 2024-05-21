@@ -12,9 +12,9 @@ const config: Config = {
       padding: {
         DEFAULT: "1rem",
         sm: "2rem",
-        lg: "4rem",
-        xl: "5rem",
-        "2xl": "6rem",
+        lg: "3rem",
+        xl: "4rem",
+        "2xl": "5rem",
       },
     },
     extend: {
@@ -26,7 +26,13 @@ const config: Config = {
         playfairDisplay: ["var(--font-playfair)"],
       },
       colors:{
-        main:'#F9C06A'
+        main:'#F9C06A',
+        secondry: '#1E1E1E',
+        coffee:'#603809',
+        maingray:'#707070'
+      },
+      boxShadow:{
+        button: '0 0 4px #F9C06A'
       }
     },
   },
