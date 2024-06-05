@@ -1,5 +1,6 @@
 import Navbar from "@/components/modules/Navbar/Navbar";
 import AboutBestCoffee from "@/components/templates/aboutBestCoffee/AboutBestCoffee";
+import PopularCoffee from "@/components/templates/PopularCoffee/PopularCoffee";
 import React from "react";
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
       </header>
       <main>
         <AboutBestCoffee/>
+        <PopularCoffee/>
       </main>
     </>
   );
