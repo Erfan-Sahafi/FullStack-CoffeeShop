@@ -1,6 +1,7 @@
 import Navbar from "@/components/modules/Navbar/Navbar";
 import AboutBestCoffee from "@/components/templates/aboutBestCoffee/AboutBestCoffee";
 import PopularCoffee from "@/components/templates/PopularCoffee/PopularCoffee";
+import WhyDifferent from "@/components/templates/WhyDifferent/WhyDifferent";
 import React from "react";
 
 const Home = () => {
@@ -25,6 +26,7 @@ const Home = () => {
       <main>
         <AboutBestCoffee/>
         <PopularCoffee/>
+        <WhyDifferent/>
       </main>
     </>
   );

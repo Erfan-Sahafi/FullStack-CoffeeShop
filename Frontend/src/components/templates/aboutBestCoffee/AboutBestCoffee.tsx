@@ -5,7 +5,7 @@ import Image from "next/image";
 const AboutBestCoffee = () => {
   return (
     <>
-      <div className="container flex font-playfairDisplay items-center justify-between mt-16">
+      <div className="container flex font-playfairDisplay items-center justify-between mt-10">
         <div className="w-[45%]">
           <Title position={null} title="Discover the best coffee" />
           <div className="mt-8">
