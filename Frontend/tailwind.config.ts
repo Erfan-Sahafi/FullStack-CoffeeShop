@@ -20,6 +20,7 @@ const config: Config = {
     extend: {
       backgroundImage: {
         header: "url('/images/coffee_image.png')",
+        ordernow: "url('/images/Rectangle.png')"
       },
       fontFamily: {
         clickerScript: ["var(--font-script)"],

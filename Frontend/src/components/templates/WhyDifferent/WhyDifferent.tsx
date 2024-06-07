@@ -1,4 +1,3 @@
-import CoffeeCard from "@/components/modules/CoffeeCard/CoffeeCard";
 import Title from "@/components/modules/Title/Title";
 import WhyDifferentCard from "@/components/modules/WhyDifferentCard/WhyDifferentCard";
 import React from "react";

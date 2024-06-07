@@ -2,6 +2,7 @@ import Navbar from "@/components/modules/Navbar/Navbar";
 import AboutBestCoffee from "@/components/templates/aboutBestCoffee/AboutBestCoffee";
 import PopularCoffee from "@/components/templates/PopularCoffee/PopularCoffee";
 import WhyDifferent from "@/components/templates/WhyDifferent/WhyDifferent";
+import OrderNow from "@/components/templates/OrderNow/OrderNow";
 import React from "react";
 
 const Home = () => {
@@ -27,6 +28,7 @@ const Home = () => {
         <AboutBestCoffee/>
         <PopularCoffee/>
         <WhyDifferent/>
+        <OrderNow />
       </main>
     </>
   );
