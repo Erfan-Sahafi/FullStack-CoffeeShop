@@ -5,7 +5,7 @@ import React from "react";
 const OrderNow = () => {
   return (
     <div className="my-10 bg-[#80603a] h-[547px] bg-ordernow bg-no-repeat bg-cover bg-blend-multiply font-playfairDisplay overflow-hidden">
-      <div className="h-full flex items-center">
+      <div className="h-full flex items-center justify-between">
         <div className="w-[575px] pl-16 text-white">
           <h3 className="text-[54px] font-bold">
             Get a chance to have an Amazing morning
@@ -16,19 +16,20 @@ const OrderNow = () => {
           </p>
           <Button text={"Order Now"} />
         </div>
-        <div className="flex items-center bg-fuchsia-200 justify-end">
+        <div className="flex items-center relative">
           <Image
             width={300}
             height={467}
             alt="coffee"
             src={"/images/cup.png"}
-            className=""
+            className="z-99 absolute right-60"
           />
           <Image
-            width={657}
+            width={600}
             height={575}
             alt="coffee"
             src={"/images/coffee_bean.png"}
+            className="z-1"
           />
         </div>
       </div>
@@ -37,3 +38,19 @@ const OrderNow = () => {
 };
 
 export default OrderNow;
+
+{
+  /* <Image
+            width={300}
+            height={467}
+            alt="coffee"
+            src={"/images/cup.png"}
+            className="absolute"
+          />
+          <Image
+            width={657}
+            height={575}
+            alt="coffee"
+            src={"/images/coffee_bean.png"}
+          /> */
+}
