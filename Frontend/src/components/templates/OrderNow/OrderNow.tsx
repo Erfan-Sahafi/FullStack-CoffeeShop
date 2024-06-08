@@ -4,7 +4,7 @@ import React from "react";
 
 const OrderNow = () => {
   return (
-    <div className="my-10 bg-[#80603a] h-[547px] bg-ordernow bg-no-repeat bg-cover bg-blend-multiply font-playfairDisplay overflow-hidden">
+    <div className="my-16 bg-[#80603a] h-[547px] bg-ordernow bg-no-repeat bg-cover bg-blend-multiply font-playfairDisplay overflow-hidden">
       <div className="h-full flex items-center justify-between">
         <div className="w-[575px] pl-16 text-white">
           <h3 className="text-[54px] font-bold">
