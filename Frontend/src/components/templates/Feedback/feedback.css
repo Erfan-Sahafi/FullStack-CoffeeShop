@@ -1,6 +1,7 @@
 .swiper {
   width: 980px;
   height: 524px;
+  overflow-y: visible;
 }
 
 .swiper-slide {
@@ -8,14 +9,8 @@
   align-items: center;
   justify-content: center;
   border: solid 2px #F9C06A;
-  color: red;
   background-color: #FFF9F1;
 }
 .swiper-button-next,.swiper-button-prev{
-  width: 82px;
-  height: 82px;
-  background-color: #F9C06A;
-  position: absolute;
-  right: -50px;
-  z-index: 9999;
+  color: #603809;
 }

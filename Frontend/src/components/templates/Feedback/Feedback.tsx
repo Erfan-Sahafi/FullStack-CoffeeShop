@@ -2,7 +2,7 @@
 import Title from "@/components/modules/Title/Title";
 import Image from "next/image";
 import React, { useCallback, useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -11,8 +11,11 @@ import "./feedback.css";
 
 // import required modules
 import { Navigation } from "swiper/modules";
+import CommentSlide from "../CommentSlide/CommentSlide";
 
 const Feedback = () => {
+  const swiper = useSwiper();
+
   return (
     <>
       <div className="relative">
@@ -29,12 +32,23 @@ const Feedback = () => {
             src={"/coffee_blast2.svg"}
           />
         </div>
-        <div className="w-full flex justify-center">
-          <Swiper slidesPerView={1} modules={[Navigation]} className="mySwiper">
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
+        <div className="w-full mb-10 font-playfairDisplay">
+          <Swiper
+            navigation={true}
+            loop={true}
+            slidesPerView={1}
+            modules={[Navigation]}
+            className="mySwiper w-full relative"
+          >
+            <SwiperSlide>
+              <CommentSlide/>
+            </SwiperSlide>
+            <SwiperSlide>
+              <CommentSlide/>
+            </SwiperSlide>
+            <SwiperSlide>
+              <CommentSlide/>
+            </SwiperSlide>
           </Swiper>
         </div>
       </div>
