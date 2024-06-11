@@ -41,15 +41,24 @@ const Feedback = () => {
             className="mySwiper w-full relative"
           >
             <SwiperSlide>
-              <CommentSlide/>
+              <CommentSlide />
             </SwiperSlide>
             <SwiperSlide>
-              <CommentSlide/>
+              <CommentSlide />
             </SwiperSlide>
             <SwiperSlide>
-              <CommentSlide/>
+              <CommentSlide />
             </SwiperSlide>
           </Swiper>
+        </div>
+        <div className="w-full flex justify-start absolute bottom-0">
+          <Image
+            className="-mt-32 z-10"
+            alt="coffee"
+            width={498}
+            height={272}
+            src={"/coffee_blast.svg"}
+          />
         </div>
       </div>
     </>

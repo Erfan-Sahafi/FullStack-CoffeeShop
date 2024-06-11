@@ -4,13 +4,13 @@ import "./globals.css";
 
 const clicker_script = Clicker_Script({
   subsets: ["latin"],
-  weight:"400",
-  variable: "--font-script"
+  weight: "400",
+  variable: "--font-script",
 });
 const playfair_display = Playfair_Display({
   subsets: ["latin"],
-  weight:["400","600","700","900"],
-  variable: "--font-playfair"
+  weight: ["400", "600", "700", "900"],
+  variable: "--font-playfair",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +25,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${clicker_script.variable} ${playfair_display.variable} font-sans`}>{children}</body>
+      <body
+        className={`${clicker_script.variable} ${playfair_display.variable} font-sans`}
+      >
+        {children}
+
+        <footer>
+          
+        </footer>
+      </body>
     </html>
   );
 }
