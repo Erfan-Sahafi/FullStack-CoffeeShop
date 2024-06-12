@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Clicker_Script, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/modules/Footer/Footer";
 
 const clicker_script = Clicker_Script({
   subsets: ["latin"],
@@ -31,7 +32,7 @@ export default function RootLayout({
         {children}
 
         <footer>
-          
+          <Footer />
         </footer>
       </body>
     </html>
