@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Clicker_Script, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/modules/Footer/Footer";
+import Subscribe from "@/components/templates/Subscribe/Subscribe";
 
 const clicker_script = Clicker_Script({
   subsets: ["latin"],
@@ -27,11 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${clicker_script.variable} ${playfair_display.variable} font-sans`}
+        className={`${clicker_script.variable} ${playfair_display.variable} font-sans flex flex-col min-h-screen justify-between`}
       >
         {children}
 
         <footer>
+          <Subscribe/>
           <Footer />
         </footer>
       </body>

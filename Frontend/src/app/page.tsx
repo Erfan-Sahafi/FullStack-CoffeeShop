@@ -5,7 +5,7 @@ import WhyDifferent from "@/components/templates/WhyDifferent/WhyDifferent";
 import OrderNow from "@/components/templates/OrderNow/OrderNow";
 import React from "react";
 import Feedback from "@/components/templates/Feedback/Feedback";
-import Subscribe from "@/components/templates/Subscribe/Subscribe";
+
 
 const Home = () => {
   return (
@@ -32,7 +32,6 @@ const Home = () => {
         <WhyDifferent/>
         <OrderNow />
         <Feedback/>
-        <Subscribe/>
       </main>
     </>
   );

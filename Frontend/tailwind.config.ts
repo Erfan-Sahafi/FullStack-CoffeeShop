@@ -22,8 +22,8 @@ const config: Config = {
         header: "url('/images/coffee_image.png')",
         ordernow: "url('/images/Rectangle.png')",
         backcoffee:"url('/images/backcoffee.png')",
-        
-        footer:"linear-gradient(0deg, rgba(121,71,9,1) 0%, rgba(55,38,17,1) 100%),url('/images/fotter_image.png')"
+        menubaner:"linear-gradient(0deg, rgba(121,71,9,1) 0%, rgba(55,38,17,1) 100%)",
+        footer:"linear-gradient(0deg, rgba(121,71,9,1) 0%, rgba(55,38,17,1) 100%),url('/images/fotter_image.png')",
       },
       fontFamily: {
         clickerScript: ["var(--font-script)"],
